@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# 数据文件
+data/*.json
+data/history/*.jsonl
+data/cache/
+*.log
+
+# 环境
+.env
+venv/
+
+# 系统
+.DS_Store

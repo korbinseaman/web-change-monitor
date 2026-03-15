@@ -1,0 +1,8 @@
+{
+  "name": "web-change-monitor",
+  "version": "1.0.0",
+  "description": "网页变化监控技能",
+  "author": "korbin",
+  "license": "MIT",
+  "category": "monitoring/web"
+}
