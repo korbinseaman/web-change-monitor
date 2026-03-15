@@ -1,0 +1,67 @@
+{
+  "skill_name": "web-change-monitor",
+  "evals": [
+    {
+      "name": "监控单个商品价格",
+      "input": {
+        "targets": [
+          {
+            "url": "https://shop.example.com/item/1001",
+            "selector": ".current-price"
+          }
+        ],
+        "interval": 60
+      },
+      "expected_output": {
+        "results": [
+          {
+            "url": "https://shop.example.com/item/1001",
+            "content": "¥3499.00",
+            "changed": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "监控多个目标",
+      "input": {
+        "targets": [
+          {
+            "url": "https://shop.example.com/item/1001",
+            "selector": ".price"
+          },
+          {
+            "url": "https://market.example.org/product?id=205",
+            "xpath": "//div[@id='price']/span"
+          }
+        ],
+        "interval": 30
+      },
+      "expected_output": {
+        "results": [
+          {
+            "url": "https://shop.example.com/item/1001",
+            "changed": true
+          },
+          {
+            "url": "https://market.example.org/product?id=205",
+            "changed": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "监控学校通知",
+      "input": {
+        "targets": [
+          {
+            "url": "https://school.edu.cn/notice",
+            "selector": "#notice-board",
+            "keyword": "放假"
+          }
+        ],
+        "return_on_change_only": false
+      }
+    }
+  ]
+}
